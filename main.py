@@ -12,7 +12,6 @@ USERS_LIST = [
     }
 ]
 
-
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
     def _set_response(self, status_code=200, body=None):
@@ -104,7 +103,6 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
                     return
             self._set_response(404, {"error": "User not found"})
 
-
 def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, host='localhost', port=8000):
     server_address = (host, port)
     httpd = server_class(server_address, handler_class)
@@ -113,7 +111,6 @@ def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, host='l
     except KeyboardInterrupt:
         pass
     httpd.server_close()
-
 
 if __name__ == '__main__':
     from sys import argv
